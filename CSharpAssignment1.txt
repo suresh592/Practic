@@ -1,0 +1,308 @@
+1)
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace CSharpPrograming
+{
+    internal class Calculator
+    {
+       
+            static void Main(string[] args)
+            {
+                int firstNumber;
+                int secondNummber;
+                string operation;
+                int result;
+
+                System.Console.WriteLine("Enter FirstNumber: ");
+                firstNumber = Convert.ToInt32(Console.ReadLine());
+
+                System.Console.WriteLine("Enter SecondNumber: ");
+                secondNummber = Convert.ToInt32(Console.ReadLine());
+
+                System.Console.WriteLine("Enter Operation(+,-,*,/): ");
+                operation = Console.ReadLine();
+
+                switch (operation)
+                {
+                    case "-":
+
+                        result = firstNumber - secondNummber;
+                        Console.WriteLine("your answer is" + firstNumber + " - " + secondNummber + " = " + result);
+                        Console.ReadLine();
+                        break;
+
+                    case "*":
+                        result = firstNumber * secondNummber;
+                        Console.WriteLine("your answer is:" + firstNumber + " x " + secondNummber + " = " + result);
+                        Console.ReadLine();
+                        break;
+
+                    case "+":
+                        result = firstNumber + secondNummber;
+                        Console.WriteLine("your answer is" + firstNumber + " +" + secondNummber + " = " + result);
+                        Console.ReadLine();
+                        break;
+
+                    case "/":
+                        result = firstNumber / secondNummber;
+
+                        Console.WriteLine("your answer is" + firstNumber + " / " + secondNummber + " = " + result);
+                        Console.ReadLine();
+                        break;
+
+                    default:
+                        System.Console.WriteLine("enter a valid opertor");
+                        Console.ReadLine();
+                        break;
+                }
+
+
+            }
+        }
+    }
+
+
+/*OutPut
+Enter FirstNumber:
+23
+Enter SecondNumber:
+43
+Enter Operation(+,-,*,/):
+*
+your answer is:23 x 43 = 989
+
+
+
+2)
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+ namespace CSharpPrograming
+{
+    internal class StudentMarksAvg
+    {
+
+
+        static void Main(string[] args)
+        {
+
+
+            int studnet1;
+            int studnet2;
+            int studnet3;
+            int studnet4;
+            int studnet5;
+            int sum;
+            int avg;
+
+            System.Console.WriteLine("Enter student 1 marks: ");
+            studnet1 = Convert.ToInt32(Console.ReadLine());
+            System.Console.WriteLine("Enter student 2 marks: ");
+            studnet2 = Convert.ToInt32(Console.ReadLine());
+            System.Console.WriteLine("Enter student 3 marks: ");
+            studnet3 = Convert.ToInt32(Console.ReadLine());
+            System.Console.WriteLine("Enter student 4 marks: ");
+            studnet4 = Convert.ToInt32(Console.ReadLine());
+            System.Console.WriteLine("Enter student 5 marks: ");
+            studnet5 = Convert.ToInt32(Console.ReadLine());
+            sum = studnet1 + studnet2 + studnet3 + studnet4 + studnet5;
+            avg = sum / 5;
+            Console.WriteLine("The avarage is : " + avg);
+
+            int[] Num = { studnet1, studnet2, studnet3, studnet4, studnet5 };
+
+            Console.WriteLine("your highest marks is : " + Num.Max());
+            Console.WriteLine("your highest marks is : " + Num.Min());
+            Console.ReadLine();
+
+        }
+    }
+}
+
+/*OutPut
+Enter student 1 marks:
+87
+Enter student 2 marks:
+97
+Enter student 3 marks:
+78
+Enter student 4 marks:
+83
+Enter student 5 marks:
+75
+The avarage is : 84
+your highest marks is : 97
+your highest marks is : 75
+*/
+
+
+3)
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace CSharpPrograming
+{
+    internal class SwapingNumbers
+    {
+    
+        public static void Main()
+        {
+            int FirstNumber = 10;
+            int SecondNumber = 20;
+            Swapping(ref FirstNumber, ref SecondNumber);
+            Console.WriteLine("Swapped First Number is:{0}", FirstNumber);
+            Console.WriteLine("Swapped Second Number is:{0}", SecondNumber);
+        }
+        public static void Swapping(ref int First, ref int Second)
+        {
+            int temp;
+            temp = First;
+            First = Second;
+            Second = temp;
+      }
+    }
+}
+ /*OutPut
+Swapped First Number is:20
+Swapped Second Number is:10
+Press any key to continue . . .
+*/
+
+
+
+
+
+
+4)
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace CSharpPrograming
+{
+    internal class ParmArry
+    {
+        public static void Main()
+        {
+            int[] Numbers = { 10, 15, 20, 40, 50 };
+            ParamsMethod(Numbers);
+
+        }
+        public static void ParamsMethod(params int[] Numbers)
+        {
+            int result;
+            int sum = 0;
+            for (int i = 0; i < Numbers.Length; i++)
+            {
+                sum = sum + Numbers[i];
+            }
+            result = sum;
+            Console.WriteLine(result);
+        }
+    }
+}
+
+/*OutPut
+135
+Press any key to continue . . .
+  */    
+
+
+
+
+5)
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace CSharpPrograming
+{
+    internal class Circle
+    {
+        static double circumference(double r)
+        {
+
+            double PI = 3.14;
+            double cir = 2 * PI * r;
+            return cir;
+        }
+        public static void Main()
+        {
+
+            double r;
+            Console.Write("Enter Radius: ");
+            r = Convert.ToInt32(Console.ReadLine());
+            double result =
+                  Math.Round(circumference(r)
+                            * 1000) / 1000.0;
+
+            Console.WriteLine("Circumference = " + result);
+        }
+    }
+}
+
+/*OutPut
+Enter Radius: 7
+Circumference = 43.96
+Press any key to continue . . .
+ */
+
+
+6)using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace CSharpAssessment1
+{
+   
+       public struct Book
+       {
+        int BookId;
+        string Title;
+        int Price;
+        string bookType;
+        enum BookType { Magazine, Novel, ReferenceBook, Miscellaneous };
+        public void Display()
+        {
+            Console.WriteLine("The Details Of The Book:BookId={0},Title={1},Price={2},bookType={3}", BookId, Title, Price, bookType);
+        }
+
+        public static void Main(string[] args)
+        {
+            Book bk = new Book();
+            bk.BookId = 1;
+            bk.Title = "The Untold Story";
+            bk.Price = 500;
+            bk.bookType = Convert.ToString(BookType.Novel);
+            bk.Display();
+
+        }
+    }
+
+}
+
+/*Output
+The Details Of The Book:BookId=1,Title=The Untold Story,Price=500,bookType=Novel
+Press any key to continue . . .
+     */
+
+
+
+
+
