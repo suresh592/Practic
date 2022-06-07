@@ -1,0 +1,39 @@
+<div class="manager-page">
+  <div class="form">
+      <div class="manager">
+          <div class="manager-header">
+            <h3 *ngIf="routeParameter == 'addUser'">Add Manager</h3>
+            <h3 *ngIf="routeParameter == 'updateUser'">Update Manager</h3>
+              <p>Please enter Staff Details.</p>
+          </div>
+      </div>
+      <div class="col-md-12">
+        <form #ownerForm="ngForm" (ngSubmit)="onManagerFormSubmit(ownerForm)" class="owner-form">
+            <input class="input-left-align" type="text" [(ngModel)]="name" placeholder="Name" name="Name" />
+            <input class="input-right-align" type="text" [(ngModel)]="mobileNumber" placeholder="MobileNumber" name="MobileNumber" />
+            <input class="input-left-align" type="email" [(ngModel)]="email" placeholder="Email Id" name="Email" />
+            <input class="input-right-align" type="text" [(ngModel)]="role" placeholder="Role" name="Role" />
+            <input class="input-left-align" type="number" [(ngModel)]="salary" placeholder="Salary" name="Salary" />    
+            <input class="input-right-align" type="number" [(ngModel)]="nic" placeholder="NIC" name="NIC" /> 
+            <input class="input-left-align" type="password" [(ngModel)]="password" placeholder="Password" name="Password" />
+            <span class="input-right-align">
+                <span class="radio-align">
+                    <input type="radio" [checked]="gender == 'male'" ngModel value="Male" name="Gender">
+                    <label>&nbsp;&nbsp;Male</label>
+                </span>
+                <span class="radio-align">
+                    <input type="radio" [checked]="gender == 'female'" ngModel value="Female" name="Gender">
+                    <label>&nbsp;&nbsp;Female</label>
+                </span>
+            </span> 
+            <textarea class="text-area-align" type="text" [(ngModel)]="address" placeholder="Address" name="Address" >
+            </textarea>       
+
+           <div>              
+                <button class="submit-user-data">Submit</button>
+            </div>
+
+        </form>
+      </div>
+  </div>
+</div>
